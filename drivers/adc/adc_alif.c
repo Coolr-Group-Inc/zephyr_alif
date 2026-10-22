@@ -1170,8 +1170,7 @@ static int adc_suspend(const struct device *dev)
 
 static int adc_resume(const struct device *dev)
 {
-	struct adc_data *data = dev->data;
-	uintptr_t regs = DEVICE_MMIO_NAMED_GET(dev, adc_reg);
+	/* VistaZ local patch: unused 'data'/'regs' locals removed (-Wunused-variable). */
 	const struct adc_config *config = dev->config;
 	int ret = 0;
 
